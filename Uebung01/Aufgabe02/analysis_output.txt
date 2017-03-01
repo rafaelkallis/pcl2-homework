@@ -1,0 +1,8 @@
+{
+    "n_words": 522,
+    "longest_word": "Exercitationem",
+    "shortest_word": "a",
+    "average_word_len": 5.503831417624521,
+    "average_words_per_sentence": 13.41025641025641,
+    "median_words_per_sentence": 14
+}
