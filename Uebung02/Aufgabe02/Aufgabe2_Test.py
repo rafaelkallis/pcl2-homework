@@ -4,7 +4,8 @@
 # Uebung 2, Aufgabe 2 TEST
 # Von Ismail Prada
 
-from Aufgabe2 import LinkedList
+from Uebung02.Aufgabe02.Aufgabe2_Vorlage import LinkedList
+
 
 def main():
     pokelist = LinkedList()
@@ -88,12 +89,12 @@ def main():
     print("Expected: Turtok\nResult:\t",
         pokelist.last)
     print("="*80)
-    
+
     pokelist.insert(pokelist.index("Bisasam"),"Mew")
     print("Expected:  ['Pikachu', 'Mew', 'Bisasam', 'Glumanda', 'Turtok']\nResult:\t",
         pokelist)
     print("="*80)
-    
+
     print("Expected: Turtok\nResult:\t",
         pokelist[2].next_node.next_node)
     print("="*80)

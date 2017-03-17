@@ -13,6 +13,7 @@ Edit the comments of the methods if you want to explain
 what you've done.
 """
 
+
 class Node:
     """Each Node object represents a single node of the linked list
     """
@@ -25,103 +26,186 @@ class Node:
         self.previous_node = None
         
     def __str__(self):
-        ##TODO
-		raise NotImplementedError
+        return str(self.value)
         
     def __repr__(self):
-        ##TODO
-		raise NotImplementedError
+        return repr(self.value)
 
 
 class LinkedList(object):
-    """This is a doubly linked List. Each node know only its neighbors.
-    """
+
     def __init__(self):
-        self.first = None #the first node: Don't forget to update!
-        self.last = None #the last node: Don't forget to update!
-        # More needed?
+        self.first = None
+        self.last = None
+        self.size = 0
         
     def __str__(self):
-        """Used by the print-function."""
-        ##TODO
-		raise NotImplementedError
+        nodes = []
+        for node in self:
+            nodes.append(str(node))
+        return "[" + ", ".join(nodes) + "]"
         
     def __repr__(self):
-        """Sets the representation of the object.
-        """
-        ##TODO
-		raise NotImplementedError
+        nodes = []
+        for node in self:
+            nodes.append(repr(node))
+        return "[" + ", ".join(nodes) + "]"
         
     def __len__(self):
-        """Returns number of nodes"""
-        ##TODO
-		raise NotImplementedError
+        return self.size
         
-    def __getitem__(self, key):
-        """Returns value of a node in a certain position"""
-        ##TODO
-		raise NotImplementedError
+    def __getitem__(self, index):
+        if 0 > index < self.size:
+            return None
+        idx = 0
+        current_node = self.first
+        while True:
+            if idx == index:
+                return current_node
+            idx += 1
+            current_node = current_node.next_node
         
-    def __setitem__(self, key, value):
-        """Assigns a new value to a node in a certain position"""
-        ##TODO
-		raise NotImplementedError
+    def __setitem__(self, index, value):
+        if index >= self.size or index < 0:
+            return
+        idx = 0
+        current_node = self.first
+        while current_node is not None:
+            if idx == index:
+                current_node.value = value
+                break
+            else:
+                idx += 1
+                current_node = current_node.next_node
         
-    def __delitem__(self, key):
-        """Deletes a node in a certain position"""
-        ##TODO
-		raise NotImplementedError
+    def __delitem__(self, index):
+        if self.size == 0 or index >= self.size or index < 0:
+            return
+        current_node = self.first
+        idx = 0
+        while current_node is not None:
+            if idx == index:
+                break
+            else:
+                idx += 1
+                current_node = current_node.next_node
+
+        if current_node is None:
+            return
+
+        elif self.size == 1:
+            self.first = None
+            self.last = None
+
+        elif self.size == 2 and self.first == current_node:
+            self.last.previous_node = None
+            self.first = self.last
+
+        elif self.size == 2 and self.last == current_node:
+            self.first.next_node = None
+            self.last = self.first
+
+        else:
+            current_node.previous_node.next_node = current_node.next_node
+            current_node.next_node.previous_node = current_node.previous_node
+
+        self.size -= 1
+        del current_node
         
     def __iter__(self):
-        """Makes iteration of the linked list possible.
-        Should yield content (aka value) of the nodes.
-        """
-        ##TODO
-		raise NotImplementedError
+        current_node = self.first
+        while current_node is not None:
+            yield current_node
+            current_node = current_node.next_node
             
     def __reversed__(self):
-        """Like iter, but in reverse.
-        Should yield content (aka value) of the nodes."""
-        ##TODO
-		raise NotImplementedError
+        current_node = self.last
+        while current_node is not None:
+            yield current_node
+            current_node = current_node.previous_node
         
-    def __contains__(self, item):
-        """Checks if a value is in the linked list."""
-        ##TODO
-		raise NotImplementedError
+    def __contains__(self, value):
+        for node in self:
+            if value == node.value:
+                return True
+        return False
         
     def __add__(self, other):
-        """Concatenates two linked lists and returns the new one."""
-        ##TODO
-		raise NotImplementedError
+        new_list = LinkedList()
+        for node in self:
+            new_list.append(node.value)
+        for node in other:
+            new_list.append(node.value)
+        return new_list
         
     def append(self, value):
-        """Adds a new node to the list and assigns it a given value."""
-        ##TODO
-		raise NotImplementedError
+        self.insert(self.size, value)
     
     def extend(self, other):
-        """Extends one linked list with another linked list or an array.
-        """
-        ##TODO
-		raise NotImplementedError
+        for node_or_value in other:
+            self.append(node_or_value if type(node_or_value) != LinkedList else node_or_value.value)
         
-    def index(self,item):
-        """Returns first index in which a given value is found."""
-        ##TODO
-		raise NotImplementedError
-        
-    def insert(self, key, value):
-        """Inserts a value in a given position"""
-        ##TODO
-		raise NotImplementedError
+    def index(self, value):
+        current_node = self.first
+        idx = 0
+        while current_node is not None:
+            if value == current_node.value:
+                print(idx)
+                return idx
+            else:
+                idx += 1
+                current_node = current_node.next_node
+
+    def insert(self, index, value):
+        if 0 < index > self.size:
+            return
+
+        new_node = Node()
+        new_node.value = value
+        new_node.next_node = None
+        new_node.previous_node = None
+
+        if self.size == 0:
+            self.first = new_node
+            self.last = new_node
+
+        elif index == 0:
+            self.first.previous_node = new_node
+            new_node.next_node = self.first
+            self.first = new_node
+
+        elif index == self.size:
+            self.last.next_node = new_node
+            new_node.previous_node = self.last
+            self.last = new_node
+
+        else:
+            idx = 1
+            current_node = self.first
+            while idx < index:
+                idx += 1
+                current_node = current_node.next_node
+            new_node.previous_node = current_node
+            new_node.next_node = current_node.next_node
+            current_node.next_node.previous_node = new_node
+            current_node.next_node = new_node
+
+        self.size += 1
         
     def clear(self):
-        """Empties the linked list."""
-        ##TODO
-		raise NotImplementedError
-        
-    # Some private methods needed?
+        for node in self:
+            del node
+        self.first = None
+        self.last = None
+        self.size = 0
+
+    def sort(self):
+        values = []
+        for node in self:
+            values.append(node.value)
+        self.clear()
+        for value in sorted(values):
+            self.append(value)
     
 def main():
     pass
