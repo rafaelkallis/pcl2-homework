@@ -1,0 +1,154 @@
+{
+  "books": [
+    {
+      "book": [
+        {
+          "title": "Lord of the Rings"
+        },
+        {
+          "author": "J.R.R. Tolkien"
+        },
+        {
+          "film-director": "Peter Jackson"
+        }
+      ],
+      "@id": "1",
+      "@movie": "yes"
+    },
+    {
+      "book": [
+        {
+          "title": "The Martian Chronicles"
+        },
+        {
+          "author": "Ray Bradbury"
+        },
+        {
+          "film-director": null
+        }
+      ],
+      "@id": "2",
+      "@movie": "no"
+    },
+    {
+      "book": [
+        {
+          "title": "The Da Vinci Code"
+        },
+        {
+          "author": "Dan Brown"
+        },
+        {
+          "film-director": "Ron Howard"
+        }
+      ],
+      "@id": "3",
+      "@movie": "yes"
+    },
+    {
+      "book": [
+        {
+          "title": "For Whom the Bell Tolls"
+        },
+        {
+          "author": "Ernest Hemingway"
+        },
+        {
+          "film-director": "Sam Wood"
+        }
+      ],
+      "@id": "4",
+      "@movie": "yes"
+    },
+    {
+      "book": [
+        {
+          "title": "Rayuela"
+        },
+        {
+          "author": "Julio Cort\u00e1zar"
+        },
+        {
+          "film-director": null
+        }
+      ],
+      "@id": "5",
+      "@movie": "no"
+    },
+    {
+      "book": [
+        {
+          "title": "Pedro P\u00e1ramo"
+        },
+        {
+          "author": "Juan Rulfo"
+        },
+        {
+          "film-director": null
+        }
+      ],
+      "@id": "6",
+      "@movie": "no"
+    },
+    {
+      "book": [
+        {
+          "title": "Der Schwarm"
+        },
+        {
+          "author": "Frank Sch\u00e4tzing"
+        },
+        {
+          "film-director": null
+        }
+      ],
+      "@id": "7",
+      "@movie": "no"
+    },
+    {
+      "book": [
+        {
+          "title": "Die Physiker"
+        },
+        {
+          "author": "Friedrich D\u00fcrrenmatt"
+        },
+        {
+          "film-director": null
+        }
+      ],
+      "@id": "8",
+      "@movie": "no"
+    },
+    {
+      "book": [
+        {
+          "title": "L'\u00c9tranger"
+        },
+        {
+          "author": "Albert Camus"
+        },
+        {
+          "film-director": "Luchino Visconti"
+        }
+      ],
+      "@id": "9",
+      "@movie": "yes"
+    },
+    {
+      "book": [
+        {
+          "title": "Cien a\u00f1os de soledad"
+        },
+        {
+          "author": "Gabriel Garc\u00eda M\u00e1rquez"
+        },
+        {
+          "film-director": null
+        }
+      ],
+      "@id": "10",
+      "@movie": "no"
+    }
+  ]
+}

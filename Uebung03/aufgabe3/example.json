@@ -1,0 +1,76 @@
+{
+  "books": {
+    "book": [
+      {
+        "@id": "1",
+        "@movie": "yes",
+        "author": "J.R.R. Tolkien",
+        "film-director": "Peter Jackson",
+        "title": "Lord of the Rings"
+      },
+      {
+        "@id": "2",
+        "@movie": "no",
+        "author": "Ray Bradbury",
+        "film-director": null,
+        "title": "The Martian Chronicles"
+      },
+      {
+        "@id": "3",
+        "@movie": "yes",
+        "author": "Dan Brown",
+        "film-director": "Ron Howard",
+        "title": "The Da Vinci Code"
+      },
+      {
+        "@id": "4",
+        "@movie": "yes",
+        "author": "Ernest Hemingway",
+        "film-director": "Sam Wood",
+        "title": "For Whom the Bell Tolls"
+      },
+      {
+        "@id": "5",
+        "@movie": "no",
+        "author": "Julio Cortázar",
+        "film-director": null,
+        "title": "Rayuela"
+      },
+      {
+        "@id": "6",
+        "@movie": "no",
+        "author": "Juan Rulfo",
+        "film-director": null,
+        "title": "Pedro Páramo"
+      },
+      {
+        "@id": "7",
+        "@movie": "no",
+        "author": "Frank Schätzing",
+        "film-director": null,
+        "title": "Der Schwarm"
+      },
+      {
+        "@id": "8",
+        "@movie": "no",
+        "author": "Friedrich Dürrenmatt",
+        "film-director": null,
+        "title": "Die Physiker"
+      },
+      {
+        "@id": "9",
+        "@movie": "yes",
+        "author": "Albert Camus",
+        "film-director": "Luchino Visconti",
+        "title": "L'Étranger"
+      },
+      {
+        "@id": "10",
+        "@movie": "no",
+        "author": "Gabriel García Márquez",
+        "film-director": null,
+        "title": "Cien años de soledad"
+      }
+    ]
+  }
+}

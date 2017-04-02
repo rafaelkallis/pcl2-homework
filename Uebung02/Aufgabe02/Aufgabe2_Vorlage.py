@@ -5,6 +5,8 @@
 # Uebung 2, Aufgabe 2
 # Von Ismail Prada
 
+# Rafael Kallis 14708887
+
 """
 Feel free to add more attributes and methods if you need them.
 You can delete the "raise NotImplementedError"-line whenever 

@@ -22,7 +22,7 @@ class AriDict(dict):
         return this
 
     def __radd__(self, other):
-        return self.__add__(AriDict(other))
+        return AriDict(other).__add__(self)
 
     def __len__(self):
         return dict.__len__(self)
